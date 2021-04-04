@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700");
+
 * {
   margin: 0;
   padding: 0;
@@ -91,6 +93,8 @@ h6 {
 body {
   color: #000;
   font-size: 14px;
+  font-family: "Open Sans", serif;
+  font-weight: 400;
 }
 
 body.lock {
@@ -134,11 +138,13 @@ body.lock {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0px 0px 20px 0px;
+  margin: 0px auto 20px auto;
+  max-width: 600px;
 }
 
 .todo__input {
   display: inline-block;
+  width: 100%;
   margin: 0px 15px 0px 0px;
   height: 30px;
   padding: 5px 5px;
@@ -169,10 +175,22 @@ body.lock {
   justify-content: space-between;
   border-bottom: 1px solid #000;
   padding: 10px 10px;
+  position: relative;
 }
 
 .todo__list-item:last-child {
   border-bottom: none;
+}
+
+.todo__list-text {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.todo__list-text.checked {
+  text-decoration: line-through;
+  color: grey;
 }
 
 @media (max-width: 1212px) {

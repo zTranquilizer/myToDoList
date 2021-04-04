@@ -19,7 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
 			li.appendChild(close);
 			text.textContent = value;
 			close.textContent = 'X';
+			input.value = '';
 			listenDeleteToDo(close);
+			li.addEventListener('click', function (e) {
+				li.classList.add('checked');
+			});
+			localStorage.setItem('todos', ul.innerHTML);
+			let data = localStorage.getItem('todos');
+			if (data) {
+				ul.innerHTML = data;
+			}
 		}
 
 	});
@@ -40,7 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
 				li.appendChild(close);
 				text.textContent = value;
 				close.textContent = 'X';
+				input.value = '';
 				listenDeleteToDo(close);
+				li.addEventListener('click', function (e) {
+					text.classList.add('checked');
+				});
+				localStorage.setItem('todos', ul.innerHTML);
+				let data = localStorage.getItem('todos');
+				if (data) {
+					ul.innerHTML = data;
+				}
 			}
 		}
 
